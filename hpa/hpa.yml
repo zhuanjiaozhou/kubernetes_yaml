@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: default-http-backend
+metadata:
+  name: default-http-backend
+  namespace: ingress-nginx
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: default-http-backend
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 10

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2017-11-01T08:59:47Z
+  name: php-apache
+  namespace: default
+  resourceVersion: "247399"
+  selfLink: /api/v1/namespaces/default/services/php-apache
+  uid: 02f859fc-bee3-11e7-b713-74dbd18002e4
+spec:
+  clusterIP: 10.254.84.197
+  ports:
+  - port: 81
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: php-apache
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
